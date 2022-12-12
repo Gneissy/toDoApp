@@ -4,10 +4,7 @@ const https = require("https"); // https is required for get request
 app.use(express.urlencoded({extended:true})); // Body-parser
 app.use(express.static("public")); // Static method in order to access local files like css and images
 const _ = require("lodash"); // Requiring lodash
-var Parse = require('parse/node'); // Back4App Activating
 
-// Parse.initialize("ojI5fzgskPxNNxbKNtPhs3IfyqZ32boc2Ficxylt","KF62WwPD0xwqW62wyex44IkpUQ2RPtMhOue3Cr3Y"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
-// Parse.serverURL = 'https://parseapi.back4app.com/'
 
 const date = require (__dirname + "/date.js")
 app.set("view engine", "ejs"); // Activating ejs
