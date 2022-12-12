@@ -1,0 +1,26 @@
+<%-include ("header");-%>
+
+<div class="box" id="heading">
+  <h1><%= dayShown %></h1>
+</div>
+<div class="box">
+
+  <!-- Displaying items and Deleting checked item -->
+  <form action="/delete" method="post">
+    <% newTaskItem.forEach(function(item){ %>
+    <div class="item">
+      <input value="<%= item._id %>" name="deleteItemCheckbox" type="checkbox" onChange="this.form.submit()">
+      <p> <%=item.name%> </p>
+    </div>
+    <% }); %>
+    <input type="hidden" name="listName" value="<%= dayShown %>">
+  </form>
+
+  <!-- Creating new items -->
+  <form class="item" action="/" method="post">
+    <input type="text" name="newItem" placeholder="New task" autocomplete="off" autofocus="on">
+    <button type="submit" name="submitButton" value=<%=dayShown%>>+</button>
+  </form>
+</div>
+
+<%-include ("footer");-%>
